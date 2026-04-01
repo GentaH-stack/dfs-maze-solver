@@ -11,3 +11,6 @@ def dfs_visual(app, x, y):
 
     app.root.update()
     time.sleep(app.speed.get())
+
+    if (x, y) == app.goal:
+        return True

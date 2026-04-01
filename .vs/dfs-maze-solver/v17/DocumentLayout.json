@@ -1,6 +1,10 @@
 {
   "Version": 1,
+<<<<<<< HEAD
   "WorkspaceRootPath": "C:\\Users\\W11\\source\\repos\\dfs-maze-solver\\",
+=======
+  "WorkspaceRootPath": "C:\\Users\\SwissTech\\dfs-maze-solver\\",
+>>>>>>> 8bcecfeacd1864aeba9a6e9676d0b94d8bcf15b7
   "Documents": [],
   "DocumentGroupContainers": [
     {
@@ -13,7 +17,11 @@
           "Children": [
             {
               "$type": "Bookmark",
+<<<<<<< HEAD
               "Name": "ST:0:0:{3ae79031-e1bc-11d0-8f78-00a0c9110057}"
+=======
+              "Name": "ST:128:0:{75188d03-9892-4ae2-abf1-207126247ce5}"
+>>>>>>> 8bcecfeacd1864aeba9a6e9676d0b94d8bcf15b7
             },
             {
               "$type": "Bookmark",

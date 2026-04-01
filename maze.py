@@ -34,3 +34,16 @@ def get_start_goal(maze):
 
     return start, goal
 
+
+def get_neighbors(maze, x, y):
+    directions = [(-1,0),(1,0),(0,-1),(0,1)]
+    neighbors = []
+
+    for dx, dy in directions:
+        nx, ny = x + dx, y + dy
+
+        if 0 <= nx < len(maze) and 0 <= ny < len(maze[0]):
+            if maze[nx][ny] != 1:
+                neighbors.append((nx, ny))
+
+    return neighbors

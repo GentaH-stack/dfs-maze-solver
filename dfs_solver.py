@@ -1,5 +1,19 @@
-def dfs_visual(app, x, y):
+import time
+from utils import draw_maze  # vetëm draw_maze importohet nga utils
 
+# Funksioni get_neighbors vendoset direkt këtu për të shmangur errorin
+def get_neighbors(maze, x, y):
+    neighbors = []
+    directions = [(0, 1), (1, 0), (0, -1), (-1, 0)]
+    for dx, dy in directions:
+        nx, ny = x + dx, y + dy
+        if 0 <= nx < len(maze) and 0 <= ny < len(maze[0]):
+            if maze[nx][ny] == 0:
+                neighbors.append((nx, ny))
+    return neighbors
+
+
+def dfs_visual(app, x, y):
     if (x, y) in app.visited:
         return False
 
@@ -12,10 +26,14 @@ def dfs_visual(app, x, y):
     app.root.update()
     time.sleep(app.speed.get())
 
-     if (x, y) == app.goal:
+    if (x, y) == app.goal:
         return True
 
-
-for nx, ny in get_neighbors(app.maze, x, y):
+    for nx, ny in get_neighbors(app.maze, x, y):
         if dfs_visual(app, nx, ny):
             return True
+
+    return False
+
+
+

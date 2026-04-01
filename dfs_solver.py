@@ -12,5 +12,10 @@ def dfs_visual(app, x, y):
     app.root.update()
     time.sleep(app.speed.get())
 
-    if (x, y) == app.goal:
+     if (x, y) == app.goal:
         return True
+
+
+for nx, ny in get_neighbors(app.maze, x, y):
+        if dfs_visual(app, nx, ny):
+            return True

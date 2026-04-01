@@ -1,7 +1,6 @@
 import time
-from utils import draw_maze  # vetëm draw_maze importohet nga utils
+from utils import draw_maze
 
-# Funksioni get_neighbors vendoset direkt këtu për të shmangur errorin
 def get_neighbors(maze, x, y):
     neighbors = []
     directions = [(0, 1), (1, 0), (0, -1), (-1, 0)]

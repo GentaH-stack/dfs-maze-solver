@@ -34,5 +34,10 @@ def dfs_visual(app, x, y):
 
     return False
 
+    app.path.pop()
+    draw_maze(app.canvas, app.maze, app.visited, app.path)
+
+    return False
+
 
 

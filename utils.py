@@ -12,6 +12,7 @@ def draw_maze(canvas, maze, visited=set(), path=[]):
 
             cell = maze[i][j]
 
+
             if cell == 1:
                 color = "#1e1e1e"  # mur
             elif (i, j) in path:

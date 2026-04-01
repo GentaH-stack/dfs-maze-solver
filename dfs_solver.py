@@ -1,0 +1,13 @@
+def dfs_visual(app, x, y):
+
+    if (x, y) in app.visited:
+        return False
+
+    app.visited.add((x, y))
+    app.path.append((x, y))
+
+    draw_maze(app.canvas, app.maze, app.visited, app.path)
+    app.update_info()
+
+    app.root.update()
+    time.sleep(app.speed.get())

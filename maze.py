@@ -10,30 +10,51 @@ def create_maze():
     return [
         ['S', 0,   1,   0],
         [1,   0,   1,   0],
-        [0,   0,   0,   1],       
+        [0,   0,   0,   1],
         [0,   1,   0,  'G']
     ]
 
 
 def generate_maze(rows, cols):
-    maze = [[0 if random.random() > 0.3 else 1 for _ in range(cols)] for _ in range(rows)]
+    maze = [[1 for _ in range(cols)] for _ in range(rows)]
+
+    # rrugë e garantuar nga start në goal
+    x, y = 0, 0
+    maze[x][y] = 0
+
+    while (x, y) != (rows - 1, cols - 1):
+        if (x < rows - 1) and (y < cols - 1):
+            if random.random() < 0.5:
+                x += 1
+            else:
+                y += 1
+        elif x < rows - 1:
+            x += 1
+        else:
+            y += 1
+
+        maze[x][y] = 0
+
+    # hap disa rrugë tjera
+    for i in range(rows):
+        for j in range(cols):
+            if random.random() < 0.25:
+                maze[i][j] = 0
+
     maze[0][0] = 'S'
-    maze[rows-1][cols-1] = 'G'
+    maze[rows - 1][cols - 1] = 'G'
+
     return maze
 
 
 def get_start_goal(maze):
-    start, goal = None, None
-
     for i in range(len(maze)):
         for j in range(len(maze[0])):
             if maze[i][j] == 'S':
                 start = (i, j)
-            elif maze[i][j] == 'G':
+            if maze[i][j] == 'G':
                 goal = (i, j)
-
     return start, goal
-
 
 def get_neighbors(maze, x, y):
     directions = [(-1,0),(1,0),(0,-1),(0,1)]

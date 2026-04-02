@@ -13,13 +13,13 @@ def draw_maze(canvas, maze, visited=set(), path=[]):
             cell = maze[i][j]
 
             if cell == 1:
-                color = "#1e1e1e"  # mur
+                color = "#1e1e1e" 
             elif (i, j) in path:
-                color = "#ffd166"  # rruga e saktë
+                color = "#ffd166"  
             elif (i, j) in visited:
-                color = "#4cc9f0"  # e vizituar
+                color = "#4cc9f0"  
             else:
-                color = "#ffffff"  # bosh
+                color = "#ffffff"  
 
             if cell == 'S':
                 color = "#06d6a0"

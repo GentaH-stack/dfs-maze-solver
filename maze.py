@@ -18,7 +18,7 @@ def create_maze():
 def generate_maze(rows, cols):
     maze = [[1 for _ in range(cols)] for _ in range(rows)]
 
-    # rrugë e garantuar nga start në goal
+    
     x, y = 0, 0
     maze[x][y] = 0
 
@@ -35,7 +35,7 @@ def generate_maze(rows, cols):
 
         maze[x][y] = 0
 
-    # hap disa rrugë tjera
+    
     for i in range(rows):
         for j in range(cols):
             if random.random() < 0.25:
